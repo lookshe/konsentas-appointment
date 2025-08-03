@@ -1,0 +1,10 @@
+GF_Anrede=Frau
+GF_Vorname=Erika
+GF_Nachname=Mustermann
+GF_Staatsangehoerigkeit=Deutsch
+Geburtsdatum=12.08.1984
+GF_Email=erika.mustermann@example.com
+GF_Strasse=Heidestrasse
+GF_Hausnummer=17
+GF_PLZ=51147
+GF_Ort=Köln
