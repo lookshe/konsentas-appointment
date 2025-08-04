@@ -13,7 +13,6 @@ async function parseArguments() {
 async function main() {
     await parseArguments();
     ret = await fetch('https://stuttgart.konsentas.de/api/getOtaStartUp/?signupform_id=' + authority_id + '&userauth=&queryParameter%5Bsignup_new%5D=1').then(res => res.json());
-    //console.log(ret.data.op_conf.processes);
     ret.data.op_conf.processes.forEach(p1 => {
       if (p1.hasOwnProperty('processes')) {
         p1.processes.forEach(p2 => {
