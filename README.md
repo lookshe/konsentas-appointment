@@ -8,6 +8,7 @@ The complete process was only tested with Ausländerbehörde and Einarbeitungs u
 - curl
 - sed
 - grep
+- date
 - yq (https://mikefarah.gitbook.io/yq/)
 - nodejs
 
