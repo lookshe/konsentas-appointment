@@ -10,6 +10,9 @@ fi
 
 source "personal_data.txt"
 
+start_date=$(date -d "$(date '+%Y-%m-%d')" +%s)
+end_date=$(date -d "$(date '+%Y-%m-%d') +90 days" +%s)
+
 ret_val=$(curl -s "https://stuttgart.konsentas.de/api/getOtaStartUp/?signupform_id=$1&userauth=&queryParameter%5Bsignup_new%5D=1")
 jwt=$(echo "$ret_val" | yq -r '.data.ota_jwt')
 next_op_id=$(echo "$ret_val" | yq -r '.data.op_id')
@@ -76,11 +79,11 @@ then
 fi
 
 ret_val=$(curl -s -H "Authorization: Bearer $jwt" \
-  "https://stuttgart.konsentas.de/api/brick_ota_termin_getTimeslot/?start=1742943600&end=5337702000" \
+  "https://stuttgart.konsentas.de/api/brick_ota_termin_getTimeslot/?start=$start_date&end=$end_date" \
   )
 echo "$ret_val" | yq -r '.data | tostring'
 ret_val=$(curl -s -H "Authorization: Bearer $jwt" \
-  "https://stuttgart.konsentas.de/api/brick_ota_termin_getTimeslot/?start=1742943600&end=1750888800" \
+  "https://stuttgart.konsentas.de/api/brick_ota_termin_getTimeslot/?start=$start_date&end=$end_date" \
   )
 echo "$ret_val" | yq -r '.data | tostring'
 
