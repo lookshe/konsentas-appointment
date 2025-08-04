@@ -82,10 +82,6 @@ ret_val=$(curl -s -H "Authorization: Bearer $jwt" \
   "https://stuttgart.konsentas.de/api/brick_ota_termin_getTimeslot/?start=$start_date&end=$end_date" \
   )
 echo "$ret_val" | yq -r '.data | tostring'
-ret_val=$(curl -s -H "Authorization: Bearer $jwt" \
-  "https://stuttgart.konsentas.de/api/brick_ota_termin_getTimeslot/?start=$start_date&end=$end_date" \
-  )
-echo "$ret_val" | yq -r '.data | tostring'
 
 exit 0
 
