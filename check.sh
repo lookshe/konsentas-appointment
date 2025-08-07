@@ -111,7 +111,7 @@ ret_val=$(curl -s -H "Authorization: Bearer $jwt" \
   -X POST \
   -F "formdata[GF_Anrede]=$GF_Anrede" \
   -F "formdata[GF_Vorname]=$GF_Vorname" \
-  -F "formdata[GF_Nachname]=GF_Nachname" \
+  -F "formdata[GF_Nachname]=$GF_Nachname" \
   -F "formdata[GF_Staatsangehoerigkeit]=$GF_Staatsangehoerigkeit" \
   -F "formdata[Geburtsdatum]=$Geburtsdatum" \
   -F "formdata[GF_Email]=$GF_Email" \
